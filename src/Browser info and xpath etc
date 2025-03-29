@@ -1,0 +1,99 @@
+After logging in and navigating a bit through the Vagaro site, we land here - https://us03.vagaro.com/merchants/reports/dashboard
+From here, we need to click on the "Settings" button. see details below.
+
+Element:
+<a href="/merchants/settings/book/notification" title="" value="SettingsParent" target="_self" isautoloadedver="1" class="menuselected activefirst">Settings</a>
+
+outerHTML:
+<a href="/merchants/settings/book/notification" title="" value="SettingsParent" target="_self" isautoloadedver="1" class="menuselected activefirst">Settings</a>
+
+selector:
+#ctl00_TOpMenu1_ulMainElement > li:nth-child(8) > a
+
+JS path:
+document.querySelector("#ctl00_TOpMenu1_ulMainElement > li:nth-child(8) > a")
+
+full XPath:
+/html/body/form/div[16]/div[2]/div/div[1]/div[3]/ul/li[8]/a
+
+
+This button will take you to this url - https://us03.vagaro.com/merchants/settings/book/notification
+-------------------
+
+then click on Search bar within that page. see details below.
+
+element:
+<input type="text" id="txtSearchSetting" class="form-control search-sidebar" placeholder="Search" maxlength="50" style="width: 100%" autocomplete="off" oninput="validateSearchInput(event)" data-gtm-form-interact-field-id="0">
+
+outerHTML:
+<input type="text" id="txtSearchSetting" class="form-control search-sidebar" placeholder="Search" maxlength="50" style="width: 100%" autocomplete="off" oninput="validateSearchInput(event)" data-gtm-form-interact-field-id="0">
+
+JSpath:
+document.querySelector("#txtSearchSetting")
+
+selector:
+#txtSearchSetting
+
+full XPath:
+/html/body/form/div[16]/div[2]/div/div[3]/div[6]/div[1]/div/div[2]/div[1]/div/input[1]
+
+
+type "inventory" into this search field and hit enter.
+-------------------
+
+Then click on the "Management" button. see details below.
+
+element:
+<a href="/merchants/settings/inventory?SettingMenu=1&amp;curpage=/merchants/settings/book/notification">Management</a>
+
+outerHTML:
+<a href="/merchants/settings/inventory?SettingMenu=1&amp;curpage=/merchants/settings/book/notification">Management</a>
+
+JS path:
+document.querySelector("#inventoryMangement > a")
+
+full xpath:
+/html/body/form/div[16]/div[2]/div/div[3]/div[6]/div[1]/div/div[2]/div[3]/div/div/ul/li/a
+
+selector:
+#inventoryMangement > a
+
+----------------------
+
+Then we hit the "download" button. see details below:
+
+element:
+<path d="M6.82812 0.875C6.41797 0.875 6.125 1.19727 6.125 1.57812V6.5H3.54688C3.01953 6.5 2.75586 7.14453 3.13672 7.52539L7.58984 11.9785C7.79492 12.1836 8.17578 12.1836 8.38086 11.9785L12.834 7.52539C13.2148 7.14453 12.9512 6.5 12.4238 6.5H9.875V1.57812C9.875 1.19727 9.55273 0.875 9.17188 0.875H6.82812ZM15.5 11.8906C15.5 11.5098 15.1777 11.1875 14.7969 11.1875H10.4902L9.05469 12.623C8.46875 13.2383 7.50195 13.2383 6.91602 12.623L5.48047 11.1875H1.20312C0.792969 11.1875 0.5 11.5098 0.5 11.8906V15.1719C0.5 15.582 0.792969 15.875 1.20312 15.875H14.7969C15.1777 15.875 15.5 15.582 15.5 15.1719V11.8906ZM11.8672 14.4688C11.8672 14.791 11.6035 15.0547 11.2812 15.0547C10.959 15.0547 10.6953 14.791 10.6953 14.4688C10.6953 14.1465 10.959 13.8828 11.2812 13.8828C11.6035 13.8828 11.8672 14.1465 11.8672 14.4688ZM13.7422 14.4688C13.7422 14.791 13.4785 15.0547 13.1562 15.0547C12.834 15.0547 12.5703 14.791 12.5703 14.4688C12.5703 14.1465 12.834 13.8828 13.1562 13.8828C13.4785 13.8828 13.7422 14.1465 13.7422 14.4688Z" fill="currentColor"></path>
+
+outerHTML:
+<path d="M6.82812 0.875C6.41797 0.875 6.125 1.19727 6.125 1.57812V6.5H3.54688C3.01953 6.5 2.75586 7.14453 3.13672 7.52539L7.58984 11.9785C7.79492 12.1836 8.17578 12.1836 8.38086 11.9785L12.834 7.52539C13.2148 7.14453 12.9512 6.5 12.4238 6.5H9.875V1.57812C9.875 1.19727 9.55273 0.875 9.17188 0.875H6.82812ZM15.5 11.8906C15.5 11.5098 15.1777 11.1875 14.7969 11.1875H10.4902L9.05469 12.623C8.46875 13.2383 7.50195 13.2383 6.91602 12.623L5.48047 11.1875H1.20312C0.792969 11.1875 0.5 11.5098 0.5 11.8906V15.1719C0.5 15.582 0.792969 15.875 1.20312 15.875H14.7969C15.1777 15.875 15.5 15.582 15.5 15.1719V11.8906ZM11.8672 14.4688C11.8672 14.791 11.6035 15.0547 11.2812 15.0547C10.959 15.0547 10.6953 14.791 10.6953 14.4688C10.6953 14.1465 10.959 13.8828 11.2812 13.8828C11.6035 13.8828 11.8672 14.1465 11.8672 14.4688ZM13.7422 14.4688C13.7422 14.791 13.4785 15.0547 13.1562 15.0547C12.834 15.0547 12.5703 14.791 12.5703 14.4688C12.5703 14.1465 12.834 13.8828 13.1562 13.8828C13.4785 13.8828 13.7422 14.1465 13.7422 14.4688Z" fill="currentColor"></path>
+
+selector:
+#dropdown-autoclose-true > svg > path
+
+JS Path:
+document.querySelector("#dropdown-autoclose-true > svg > path")
+
+full XPath:
+/html/body/form/div[16]/div[2]/div/div[3]/div[12]/main/div/div/div[2]/main/section[2]/div[1]/div[2]/div[5]/div/button/svg/path
+
+----------------------
+Then press "Excel" button. see details below:
+
+element: 
+<a href="#" data-rr-ui-dropdown-item="" class="dropdown-item" role="button" tabindex="0">Excel</a>
+
+outerHTML:
+<a href="#" data-rr-ui-dropdown-item="" class="dropdown-item" role="button" tabindex="0">Excel</a>
+
+selector:
+#root > main > div > div > div.mainArea.d-flex.flex-column.col > main > section.isPaginationFound.sectionReact.sectionWrap.listingTableWrap.pb-0.pt-2.Invtable_lastcolSticky > div.justify-content-between.d-flex.w-100.inventorySortFilter > div.export-tools.w-100 > div.export-icon.download.v_hide_mbl > div > div > a:nth-child(1)
+
+JS path: 
+document.querySelector("#root > main > div > div > div.mainArea.d-flex.flex-column.col > main > section.isPaginationFound.sectionReact.sectionWrap.listingTableWrap.pb-0.pt-2.Invtable_lastcolSticky > div.justify-content-between.d-flex.w-100.inventorySortFilter > div.export-tools.w-100 > div.export-icon.download.v_hide_mbl > div > div > a:nth-child(1)")
+
+full xpath:
+/html/body/form/div[16]/div[2]/div/div[3]/div[12]/main/div/div/div[2]/main/section[2]/div[1]/div[2]/div[5]/div/div/a[1]
+
+
+Then we have that file downloaded.
