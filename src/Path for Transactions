@@ -1,0 +1,92 @@
+After logging in and navigating a bit through the Vagaro site, we land here - https://us03.vagaro.com/merchants/reports/sales/transactionlist
+Then you need to click on the date control button:
+
+element:
+<input required="" placeholder="" type="text" readonly="" id="txtdaterangetransaction" class="form-control" value="Mar 31, 2025 - Mar 31, 2025">
+
+outerHTML:
+<input required="" placeholder="" type="text" readonly="" id="txtdaterangetransaction" class="form-control" value="Mar 31, 2025 - Mar 31, 2025">
+
+selector:
+#txtdaterangetransaction
+
+JS path:
+document.querySelector("#txtdaterangetransaction")
+
+full Xpath:
+/html/body/div[4]/div[14]/main/div/div/div[2]/div/div[1]/form/div[1]/div[1]/div/input
+
+--------------------------------
+
+Then we click the "From" box, and type the date "Mar 24, 2025" for a week before today.
+
+element:
+<input class="input-mini" type="text" name="daterangepicker_start" value="">
+
+outerHTML:
+<input class="input-mini" type="text" name="daterangepicker_start" value="">
+
+selector:
+body > div:nth-child(70) > div > div.ranges > div > div > div.daterangepicker_start_input > input
+
+JS path:
+document.querySelector("body > div:nth-child(70) > div > div.ranges > div > div > div.daterangepicker_start_input > input")
+
+full Xpath:
+/html/body/div[29]/div/div[3]/div/div/div[1]/input
+
+--------------------------------
+then hit "Submit":
+
+element:
+<button class="applyBtn btn btn-success">Submit</button>
+
+outerHTML:
+<button class="applyBtn btn btn-success">Submit</button>
+
+selector:
+body > div:nth-child(70) > div > div.ranges > div > button.applyBtn.btn.btn-success
+
+JS path:
+document.querySelector("body > div:nth-child(70) > div > div.ranges > div > button.applyBtn.btn.btn-success")
+
+full Xpath:
+/html/body/div[29]/div/div[3]/div/button[1]
+
+--------------------------------
+then we hit "Run Report":
+
+element:
+<button type="button" id="btntransfilter" class="justify-content-center btn btn-primary">Run Report</button>
+
+outerHTML:
+<button type="button" id="btntransfilter" class="justify-content-center btn btn-primary">Run Report</button>
+
+selector:
+#btntransfilter
+
+JS path:
+document.querySelector("#btntransfilter")
+
+full Xpath:
+/html/body/div[4]/div[14]/main/div/div/div[2]/div/div[1]/form/div[1]/div[4]/button
+
+-------------------
+after running this and waiting a few seconds, it'll load the data. then we need to click the "Export" button:
+
+element:
+<button id="react-aria8944978103-1" aria-expanded="false" type="button" class="dropdown-toggle btn btn-secondary">Export</button>
+
+outerHTML:
+<button id="react-aria8944978103-1" aria-expanded="false" type="button" class="dropdown-toggle btn btn-secondary">Export</button>
+
+selector:
+#react-aria8944978103-1
+
+JS Path:
+document.querySelector("#react-aria8944978103-1")
+
+full Xpath:
+/html/body/div[4]/div[14]/main/div/div/div[2]/div/div[3]/div[2]/div/button
+
+
