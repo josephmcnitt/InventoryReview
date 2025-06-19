@@ -89,4 +89,13 @@ document.querySelector("#react-aria8944978103-1")
 full Xpath:
 /html/body/div[4]/div[14]/main/div/div/div[2]/div/div[3]/div[2]/div/button
 
+-------------------
+
+then hit "Excel"
+
+selector:
+<a data-rr-ui-dropdown-item="" class="dropdown-item" role="button" tabindex="0">Excel</a>
+
+full Xpath:
+/html/body/div[4]/div[14]/main/div/div/div[2]/div/div[3]/div[2]/div/div/a[1]
 
