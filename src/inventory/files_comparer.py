@@ -52,17 +52,20 @@ class InventoryComparer:
         
     def load_data(self):
         """
-        Load data from both Excel files into pandas DataFrames.
+        Load data from both files into pandas DataFrames.
         Standardizes column names and data types for comparison.
         """
         try:
             # Load Vagaro inventory data (source of truth)
-            # Skip the first two rows which are empty and read with headers
-            self.vagaro_df = pd.read_excel(
-                self.vagaro_file,
-                skiprows=2,  # Skip empty rows
-                header=0    # Use first non-skipped row as header
-            )
+            if self.vagaro_file.suffix.lower() == '.csv':
+                self.vagaro_df = pd.read_csv(self.vagaro_file)
+            else:
+                self.vagaro_df = pd.read_excel(
+                    self.vagaro_file,
+                    skiprows=2,  # Skip empty rows
+                    header=0,    # Use first non-skipped row as header
+                    engine='openpyxl'
+                )
             print("\nVagaro file columns:", self.vagaro_df.columns.tolist())
             print("\nVagaro first 5 rows:")
             print(self.vagaro_df.head())
@@ -78,15 +81,20 @@ class InventoryComparer:
             self.vagaro_df = self.vagaro_df[list(vagaro_mapping.keys())].copy()
             self.vagaro_df.columns = list(vagaro_mapping.values())
             
-            # Load official stock tracker data - handle both xlsx and xlsb
-            if self.stock_tracker_file.suffix.lower() == '.xlsb':
+            # Load official stock tracker data
+            if self.stock_tracker_file.suffix.lower() == '.csv':
+                self.stock_df = pd.read_csv(self.stock_tracker_file)
+            elif self.stock_tracker_file.suffix.lower() == '.xlsb':
                 self.stock_df = pd.read_excel(
                     self.stock_tracker_file,
                     engine='pyxlsb',
                     sheet_name=0
                 )
             else:
-                self.stock_df = pd.read_excel(self.stock_tracker_file)
+                self.stock_df = pd.read_excel(
+                    self.stock_tracker_file,
+                    engine='openpyxl'
+                )
                 
             print("\nStock Tracker columns:", self.stock_df.columns.tolist())
             print("\nStock Tracker first 5 rows:")
@@ -305,21 +313,26 @@ class InventoryComparer:
         """
         try:
             # Load stock tracker data with expiration dates
-            if self.stock_tracker_file.suffix.lower() == '.xlsb':
+            if self.stock_tracker_file.suffix.lower() == '.csv':
+                stock_df = pd.read_csv(self.stock_tracker_file)
+            elif self.stock_tracker_file.suffix.lower() == '.xlsb':
                 stock_df = pd.read_excel(
                     self.stock_tracker_file,
                     engine='pyxlsb',
                     sheet_name=0
                 )
             else:
-                stock_df = pd.read_excel(self.stock_tracker_file)
+                stock_df = pd.read_excel(
+                    self.stock_tracker_file,
+                    engine='openpyxl'
+                )
             
             # Convert expiration date to datetime
-            stock_df['Expiration '] = pd.to_datetime(stock_df['Expiration '], errors='coerce')
+            stock_df['Expiration'] = pd.to_datetime(stock_df['Expiration'], errors='coerce')
             
             # Calculate days until expiration
             today = pd.Timestamp.now()
-            stock_df['Days Until Expiration'] = (stock_df['Expiration '] - today).dt.days
+            stock_df['Days Until Expiration'] = (stock_df['Expiration'] - today).dt.days
             
             # Identify medications at risk of expiring (within 30 days)
             expiring_soon = stock_df[
@@ -346,7 +359,13 @@ class InventoryComparer:
             
         except Exception as e:
             logger.error(f"Error analyzing medication expiration: {e}")
-            raise
+            return {
+                'expiring_soon': pd.DataFrame(),
+                'low_stock': pd.DataFrame(),
+                'location_analysis': pd.Series(),
+                'total_expiring_soon': 0,
+                'total_low_stock': 0
+            }
 
 def main():
     """
