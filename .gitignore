@@ -36,4 +36,4 @@ ENV/
 # Project specific
 *.xlsx
 *.xlsb
-*.log 
+*.log src/scrapers/vagaro/chrome_debug_profile/
